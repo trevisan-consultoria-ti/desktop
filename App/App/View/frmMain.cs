@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace App.frm
+namespace App.View
 {
     public partial class frmMain : Form
     {

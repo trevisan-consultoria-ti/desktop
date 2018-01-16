@@ -1,4 +1,4 @@
-﻿namespace App.frm
+﻿namespace App.View
 {
     partial class frmMain
     {
@@ -34,7 +34,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(629, 401);
+            this.ClientSize = new System.Drawing.Size(560, 374);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "INSIDE AUTOMAÇÃO";
