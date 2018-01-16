@@ -1,0 +1,30 @@
+
+
+============================
+TOKEN
+============================
+
+Será criada na API uma tabela usuario_token
+Nela iremos gerar o token de acesso para o usuário
+Na instalação desktop, informamos o token e usuário
+Assim ninguem acessa a api sem estar cadastrado
+
+/* USUARIO-TOKEN ================================================== */
+
+DROP TABLE IF EXISTS usuario_token;
+
+CREATE TABLE usuario_token (
+	id int(11) NOT NULL,
+	id_usuario int(11) NOT NULL,
+	token varchar(255) NOT NULL,  
+	acesso varchar(100) DEFAULT 'PENDENTE',
+	created datetime NOT NULL,
+	modified datetime NOT NULL
+);
+
+ALTER TABLE usuario_token
+	ADD PRIMARY KEY (id);
+  
+ALTER TABLE usuario_token
+	MODIFY id int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+	
