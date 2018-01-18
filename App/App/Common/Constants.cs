@@ -6,5 +6,6 @@
 
         //WEB API
         public static string API_FUNCTION_TEST_CONNECTION = "test-connection.php";
+        public static string API_FUNCTION_PRODUCTS = "products.php";
     }
 }

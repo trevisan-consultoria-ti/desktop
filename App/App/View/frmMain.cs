@@ -1,4 +1,5 @@
 ﻿using App.Common;
+using App.Controller;
 using App.Data;
 using App.Model;
 using System;
@@ -92,6 +93,12 @@ namespace App.View
             {
                 MessageBox.Show("Erro ao chamar API MYSQL. [" + ex.Message + "]", "Erro de Conexão", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnVerificarEstoque_Click(object sender, EventArgs e)
+        {
+            var ctl = new EstoqueBO();
+            lblNumProdutosWeb.Text += ctl.VerificarQuantidades().ToString();
         }
     }
 }

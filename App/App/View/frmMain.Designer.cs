@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnTestMysqlConnection = new System.Windows.Forms.Button();
             this.txtXdSenha = new System.Windows.Forms.TextBox();
             this.txtXdUsuario = new System.Windows.Forms.TextBox();
             this.txtXdNomeBase = new System.Windows.Forms.TextBox();
@@ -39,7 +40,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.btnTestMysqlConnection = new System.Windows.Forms.Button();
             this.btnSaveConfigs = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnTestApiConnection = new System.Windows.Forms.Button();
@@ -51,10 +51,16 @@
             this.label6 = new System.Windows.Forms.Label();
             this.tabControlMain = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnVerificarEstoque = new System.Windows.Forms.Button();
+            this.lblNumProdutosWeb = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabControlMain.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -78,6 +84,16 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "CONEXÃO - MYSQL";
+            // 
+            // btnTestMysqlConnection
+            // 
+            this.btnTestMysqlConnection.Location = new System.Drawing.Point(263, 187);
+            this.btnTestMysqlConnection.Name = "btnTestMysqlConnection";
+            this.btnTestMysqlConnection.Size = new System.Drawing.Size(98, 23);
+            this.btnTestMysqlConnection.TabIndex = 21;
+            this.btnTestMysqlConnection.Text = "Testar Conexão";
+            this.btnTestMysqlConnection.UseVisualStyleBackColor = true;
+            this.btnTestMysqlConnection.Click += new System.EventHandler(this.btnTestMysqlConnection_Click);
             // 
             // txtXdSenha
             // 
@@ -169,16 +185,6 @@
             this.label13.Size = new System.Drawing.Size(46, 13);
             this.label13.TabIndex = 11;
             this.label13.Text = "Servidor";
-            // 
-            // btnTestMysqlConnection
-            // 
-            this.btnTestMysqlConnection.Location = new System.Drawing.Point(263, 187);
-            this.btnTestMysqlConnection.Name = "btnTestMysqlConnection";
-            this.btnTestMysqlConnection.Size = new System.Drawing.Size(98, 23);
-            this.btnTestMysqlConnection.TabIndex = 21;
-            this.btnTestMysqlConnection.Text = "Testar Conexão";
-            this.btnTestMysqlConnection.UseVisualStyleBackColor = true;
-            this.btnTestMysqlConnection.Click += new System.EventHandler(this.btnTestMysqlConnection_Click);
             // 
             // btnSaveConfigs
             // 
@@ -272,12 +278,13 @@
             // 
             // tabControlMain
             // 
+            this.tabControlMain.Controls.Add(this.tabPage2);
             this.tabControlMain.Controls.Add(this.tabPage1);
             this.tabControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlMain.Location = new System.Drawing.Point(0, 0);
             this.tabControlMain.Name = "tabControlMain";
             this.tabControlMain.SelectedIndex = 0;
-            this.tabControlMain.Size = new System.Drawing.Size(423, 498);
+            this.tabControlMain.Size = new System.Drawing.Size(423, 496);
             this.tabControlMain.TabIndex = 7;
             // 
             // tabPage1
@@ -288,16 +295,56 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(415, 472);
+            this.tabPage1.Size = new System.Drawing.Size(415, 470);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "CONEXÃO";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.groupBox3);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(415, 470);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "AÇÃO";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.lblNumProdutosWeb);
+            this.groupBox3.Controls.Add(this.btnVerificarEstoque);
+            this.groupBox3.Location = new System.Drawing.Point(15, 18);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(382, 432);
+            this.groupBox3.TabIndex = 0;
+            this.groupBox3.TabStop = false;
+            // 
+            // btnVerificarEstoque
+            // 
+            this.btnVerificarEstoque.Location = new System.Drawing.Point(17, 19);
+            this.btnVerificarEstoque.Name = "btnVerificarEstoque";
+            this.btnVerificarEstoque.Size = new System.Drawing.Size(138, 23);
+            this.btnVerificarEstoque.TabIndex = 0;
+            this.btnVerificarEstoque.Text = "Verificar Estoque";
+            this.btnVerificarEstoque.UseVisualStyleBackColor = true;
+            this.btnVerificarEstoque.Click += new System.EventHandler(this.btnVerificarEstoque_Click);
+            // 
+            // lblNumProdutosWeb
+            // 
+            this.lblNumProdutosWeb.AutoSize = true;
+            this.lblNumProdutosWeb.Location = new System.Drawing.Point(14, 59);
+            this.lblNumProdutosWeb.Name = "lblNumProdutosWeb";
+            this.lblNumProdutosWeb.Size = new System.Drawing.Size(153, 13);
+            this.lblNumProdutosWeb.TabIndex = 1;
+            this.lblNumProdutosWeb.Text = "Número de Produtos na WEB: ";
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(423, 498);
+            this.ClientSize = new System.Drawing.Size(423, 496);
             this.Controls.Add(this.tabControlMain);
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -309,6 +356,9 @@
             this.groupBox2.PerformLayout();
             this.tabControlMain.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -338,5 +388,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TabControl tabControlMain;
         private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button btnVerificarEstoque;
+        private System.Windows.Forms.Label lblNumProdutosWeb;
     }
 }
